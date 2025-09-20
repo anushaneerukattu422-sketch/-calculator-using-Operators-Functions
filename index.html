@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Calculator • Operators & Functions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" role="main">
+    <h1>Simple Calculator</h1>
+
+    <form id="calc-form" class="card" onsubmit="return false" aria-labelledby="calc-title">
+      <h2 id="calc-title">Basic Operations</h2>
+
+      <label class="field">
+        <span>First number</span>
+        <input id="num1" type="text" inputmode="decimal" aria-label="First number" placeholder="e.g., 12.5" />
+      </label>
+
+      <label class="field">
+        <span>Second number (for + − × ÷)</span>
+        <input id="num2" type="text" inputmode="decimal" aria-label="Second number" placeholder="e.g., 3" />
+      </label>
+
+      <div class="buttons" role="group" aria-label="Arithmetic operations">
+        <button type="button" data-op="add">+</button>
+        <button type="button" data-op="sub">−</button>
+        <button type="button" data-op="mul">×</button>
+        <button type="button" data-op="div">÷</button>
+        <button type="button" data-op="square">x²</button>
+        <button type="button" data-op="cube">x³</button>
+        <button type="button" id="clear" class="secondary">Clear</button>
+      </div>
+
+      <label class="field">
+        <span>Result</span>
+        <input id="result" type="text" readonly aria-readonly="true" placeholder="Result will appear here" />
+      </label>
+
+      <p id="error" class="error" role="alert" aria-live="polite"></p>
+    </form>
+
+    <footer class="note">
+      <p>Tip: x² / x³ use the first number only. Division by zero is blocked.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
